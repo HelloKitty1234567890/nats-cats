@@ -27,10 +27,7 @@ header h1 {
   margin-bottom: 8px;
 }
 
-header p {
-  font-size: 1.15em;
-  color: #9a3070;
-}
+header p { font-size: 1.15em; color: #9a3070; }
 
 .loading {
   text-align: center;
@@ -116,9 +113,7 @@ header p {
   background: #ffe8f5;
 }
 
-.popup-body {
-  padding: 18px 20px 20px;
-}
+.popup-body { padding: 18px 20px 20px; }
 
 .popup-body h2 {
   color: #b8276e;
@@ -139,11 +134,7 @@ header p {
   margin-bottom: 14px;
 }
 
-.traits {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
+.traits { display: flex; flex-wrap: wrap; gap: 7px; }
 
 .trait {
   background: #ffe8f5;
@@ -164,8 +155,7 @@ header p {
   cursor: pointer;
   color: #b8276e;
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
+  width: 34px; height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,60 +189,63 @@ header p {
 
 <script>
 const breeds = [
-  { name:"Persian",             origin:"Iran",         apiId:"pers", desc:"Persians are fluffy, gentle cats with flat faces and long silky coats. They love lounging around and being pampered. Very calm and quiet.",                                                               traits:["Very fluffy","Quiet","Gentle","Indoor cat"] },
-  { name:"Siamese",             origin:"Thailand",     apiId:"siam", desc:"Siamese cats are famous for being very chatty! They have striking blue eyes and a cream body with dark markings on their face, ears, paws and tail.",                                                      traits:["Very talkative","Blue eyes","Loyal","Playful"] },
-  { name:"Maine Coon",          origin:"USA",          apiId:"mcoo", desc:"Maine Coons are one of the biggest domestic cat breeds! They have long fluffy tails, tufted ears, and are known for being friendly and dog-like.",                                                          traits:["Very large","Fluffy tail","Friendly","Loves water"] },
-  { name:"Bengal",              origin:"USA",          apiId:"beng", desc:"Bengals look like mini leopards! They have beautiful spotted or marbled coats and are very energetic and playful. They love to climb and explore.",                                                         traits:["Wild look","Very active","Loves climbing","Intelligent"] },
-  { name:"Scottish Fold",       origin:"Scotland",     apiId:"sfol", desc:"Scottish Folds have adorable folded ears that make them look like little owls! They are sweet, calm cats that get along with everyone.",                                                                    traits:["Folded ears","Round face","Calm","Loves cuddles"] },
-  { name:"Ragdoll",             origin:"USA",          apiId:"ragd", desc:"Ragdolls are named because they go floppy like a ragdoll when you pick them up! They are big, gentle, blue-eyed cats that are incredibly relaxed.",                                                        traits:["Goes floppy","Blue eyes","Very gentle","Big and fluffy"] },
-  { name:"British Shorthair",   origin:"UK",           apiId:"bsho", desc:"British Shorthairs are chubby-cheeked, round-faced cats famous for their dense, plush coats. They are calm and easygoing companions.",                                                                     traits:["Chubby cheeks","Dense coat","Calm","Independent"] },
-  { name:"Sphynx",              origin:"Canada",       apiId:"sphy", desc:"Sphynx cats have no fur! They have wrinkly skin and big ears. They are very warm to touch and love snuggling under blankets to stay cosy.",                                                               traits:["No fur","Very warm","Wrinkly","Loves cuddles"] },
-  { name:"Abyssinian",          origin:"Ethiopia",     apiId:"abys", desc:"Abyssinians are slender, athletic cats with a beautiful ticked coat that shimmers in the light. They are very curious and love exploring everything.",                                                      traits:["Very curious","Athletic","Shimmery coat","Smart"] },
-  { name:"Norwegian Forest Cat",origin:"Norway",       apiId:"norw", desc:"Norwegian Forest Cats have thick, waterproof coats built for cold weather. They are excellent climbers and love being outdoors.",                                                                           traits:["Waterproof coat","Loves climbing","Strong","Gentle"] },
-  { name:"Turkish Angora",      origin:"Turkey",       apiId:"tang", desc:"Turkish Angoras are elegant cats with silky long coats. They are playful and intelligent, and often have two different coloured eyes!",                                                                    traits:["Silky coat","Playful","Often odd-eyed","Elegant"] },
-  { name:"Burmese",             origin:"Myanmar",      apiId:"bure", desc:"Burmese cats are glossy, muscular cats with golden eyes. They are very affectionate and follow their owners around like a shadow!",                                                                        traits:["Glossy coat","Very affectionate","Golden eyes","Playful"] },
-  { name:"Russian Blue",        origin:"Russia",       apiId:"rblu", desc:"Russian Blues have a stunning blue-grey coat that shimmers silver in the light. They are shy at first but very loyal and loving with their families.",                                                     traits:["Blue-grey coat","Shy but sweet","Loyal","Gentle"] },
-  { name:"Devon Rex",           origin:"UK",           apiId:"drex", desc:"Devon Rex cats have huge ears, big eyes and wavy curly coats. They are full of mischief and love learning tricks. Very pixie-like!",                                                                      traits:["Curly coat","Huge ears","Mischievous","Loves tricks"] },
-  { name:"Birman",              origin:"Burma",        apiId:"birm", desc:"Birmans are beautiful cats with silky coats, blue eyes, and white gloves on their paws. They are gentle, calm and very affectionate.",                                                                     traits:["White paws","Blue eyes","Silky coat","Gentle"] },
-  { name:"Manx",                origin:"Isle of Man",  apiId:"manx", desc:"Manx cats have no tail, or just a tiny stub! They come from a tiny island between England and Ireland. They are playful and dog-like.",                                                                   traits:["No tail","Playful","Dog-like","Round"] },
-  { name:"Exotic Shorthair",    origin:"USA",          apiId:"esho", desc:"Exotic Shorthairs look like Persians but with short fur — great for people who love the flat-faced look without hours of grooming!",                                                                      traits:["Flat face","Short fur","Calm","Sweet"] },
-  { name:"Savannah",            origin:"USA",          apiId:"sava", desc:"Savannahs are tall, long-legged cats that look like small wild cheetahs! They are very active and can even be taught to walk on a leash.",                                                                traits:["Very tall","Spotted coat","Loves walks","Very active"] },
-  { name:"Cornish Rex",         origin:"UK",           apiId:"crex", desc:"Cornish Rex cats have incredibly soft, wavy coats and slim elegant bodies. They are very playful and stay kittenish even as adults!",                                                                     traits:["Wavy coat","Very soft","Playful","Slender"] },
-  { name:"Tonkinese",           origin:"Canada",       apiId:"tonk", desc:"Tonkinese cats are a mix of Siamese and Burmese. They have beautiful aqua eyes and love being the centre of attention. Very chatty and fun!",                                                             traits:["Aqua eyes","Chatty","Playful","Friendly"] },
-  { name:"Chartreux",           origin:"France",       apiId:"char", desc:"Chartreux cats are a rare French breed with a blue-grey woolly coat and copper or gold eyes. They are quiet and calm with a sweet expression.",                                                           traits:["Blue-grey coat","Quiet","Copper eyes","Rare"] },
-  { name:"Balinese",            origin:"USA",          apiId:"bali", desc:"Balinese cats are like Siamese cats but with longer, silky coats. They are just as chatty and social, and love being involved in everything!",                                                            traits:["Long coat","Very chatty","Blue eyes","Social"] },
-  { name:"Ocicat",              origin:"USA",          apiId:"ocic", desc:"Ocicats look wild with their stunning spots, but they are fully domestic! Named after the ocelot, they are very active and social cats.",                                                                  traits:["Spotted","Wild look","Social","Athletic"] },
-  { name:"Himalayan",           origin:"USA/UK",       apiId:"hima", desc:"Himalayans look like Persians but with Siamese colouring — beautiful blue eyes and colourpoint markings. They are gentle and love being indoors.",                                                        traits:["Blue eyes","Fluffy","Gentle","Colourpoint coat"] },
+  { name:"Persian",              origin:"Iran",        apiId:"pers", desc:"Persians are fluffy, gentle cats with flat faces and long silky coats. They love lounging around and being pampered. Very calm and quiet.",                                           traits:["Very fluffy","Quiet","Gentle","Indoor cat"] },
+  { name:"Siamese",              origin:"Thailand",    apiId:"siam", desc:"Siamese cats are famous for being very chatty! They have striking blue eyes and a cream body with dark markings on their face, ears, paws and tail.",                                  traits:["Very talkative","Blue eyes","Loyal","Playful"] },
+  { name:"Maine Coon",           origin:"USA",         apiId:"mcoo", desc:"Maine Coons are one of the biggest domestic cat breeds! They have long fluffy tails, tufted ears, and are known for being friendly and dog-like.",                                      traits:["Very large","Fluffy tail","Friendly","Loves water"] },
+  { name:"Bengal",               origin:"USA",         apiId:"beng", desc:"Bengals look like mini leopards! They have beautiful spotted or marbled coats and are very energetic and playful. They love to climb and explore.",                                     traits:["Wild look","Very active","Loves climbing","Intelligent"] },
+  { name:"Scottish Fold",        origin:"Scotland",    apiId:"sfol", desc:"Scottish Folds have adorable folded ears that make them look like little owls! They are sweet, calm cats that get along with everyone.",                                               traits:["Folded ears","Round face","Calm","Loves cuddles"] },
+  { name:"Ragdoll",              origin:"USA",         apiId:"ragd", desc:"Ragdolls are named because they go floppy like a ragdoll when you pick them up! They are big, gentle, blue-eyed cats that are incredibly relaxed.",                                    traits:["Goes floppy","Blue eyes","Very gentle","Big and fluffy"] },
+  { name:"British Shorthair",    origin:"UK",          apiId:"bsho", desc:"British Shorthairs are chubby-cheeked, round-faced cats famous for their dense, plush coats. They are calm and easygoing companions.",                                                traits:["Chubby cheeks","Dense coat","Calm","Independent"] },
+  { name:"Sphynx",               origin:"Canada",      apiId:"sphy", desc:"Sphynx cats have no fur! They have wrinkly skin and big ears. They are very warm to touch and love snuggling under blankets to stay cosy.",                                          traits:["No fur","Very warm","Wrinkly","Loves cuddles"] },
+  { name:"Abyssinian",           origin:"Ethiopia",    apiId:"abys", desc:"Abyssinians are slender, athletic cats with a beautiful ticked coat that shimmers in the light. They are very curious and love exploring everything.",                                 traits:["Very curious","Athletic","Shimmery coat","Smart"] },
+  { name:"Norwegian Forest Cat", origin:"Norway",      apiId:"norw", desc:"Norwegian Forest Cats have thick, waterproof coats built for cold weather. They are excellent climbers and love being outdoors.",                                                      traits:["Waterproof coat","Loves climbing","Strong","Gentle"] },
+  { name:"Turkish Angora",       origin:"Turkey",      apiId:"tang", desc:"Turkish Angoras are elegant cats with silky long coats. They are playful and intelligent, and often have two different coloured eyes!",                                               traits:["Silky coat","Playful","Often odd-eyed","Elegant"] },
+  { name:"Burmese",              origin:"Myanmar",     apiId:"bure", desc:"Burmese cats are glossy, muscular cats with golden eyes. They are very affectionate and follow their owners around like a shadow!",                                                    traits:["Glossy coat","Very affectionate","Golden eyes","Playful"] },
+  { name:"Russian Blue",         origin:"Russia",      apiId:"rblu", desc:"Russian Blues have a stunning blue-grey coat that shimmers silver in the light. They are shy at first but very loyal and loving with their families.",                                 traits:["Blue-grey coat","Shy but sweet","Loyal","Gentle"] },
+  { name:"Devon Rex",            origin:"UK",          apiId:"drex", desc:"Devon Rex cats have huge ears, big eyes and wavy curly coats. They are full of mischief and love learning tricks. Very pixie-like!",                                                 traits:["Curly coat","Huge ears","Mischievous","Loves tricks"] },
+  { name:"Birman",               origin:"Burma",       apiId:"birm", desc:"Birmans are beautiful cats with silky coats, blue eyes, and white gloves on their paws. They are gentle, calm and very affectionate.",                                                traits:["White paws","Blue eyes","Silky coat","Gentle"] },
+  { name:"Manx",                 origin:"Isle of Man", apiId:"manx", desc:"Manx cats have no tail, or just a tiny stub! They come from a tiny island between England and Ireland. They are playful and dog-like.",                                               traits:["No tail","Playful","Dog-like","Round"] },
+  { name:"Exotic Shorthair",     origin:"USA",         apiId:"esho", desc:"Exotic Shorthairs look like Persians but with short fur — great for people who love the flat-faced look without hours of grooming!",                                                  traits:["Flat face","Short fur","Calm","Sweet"] },
+  { name:"Savannah",             origin:"USA",         apiId:"sava", desc:"Savannahs are tall, long-legged cats that look like small wild cheetahs! They are very active and can even be taught to walk on a leash.",                                            traits:["Very tall","Spotted coat","Loves walks","Very active"] },
+  { name:"Cornish Rex",          origin:"UK",          apiId:"crex", desc:"Cornish Rex cats have incredibly soft, wavy coats and slim elegant bodies. They are very playful and stay kittenish even as adults!",                                                 traits:["Wavy coat","Very soft","Playful","Slender"] },
+  { name:"Tonkinese",            origin:"Canada",      apiId:"tonk", desc:"Tonkinese cats are a mix of Siamese and Burmese. They have beautiful aqua eyes and love being the centre of attention. Very chatty and fun!",                                         traits:["Aqua eyes","Chatty","Playful","Friendly"] },
+  { name:"Chartreux",            origin:"France",      apiId:"char", desc:"Chartreux cats are a rare French breed with a blue-grey woolly coat and copper or gold eyes. They are quiet and calm with a sweet expression.",                                       traits:["Blue-grey coat","Quiet","Copper eyes","Rare"] },
+  { name:"Balinese",             origin:"USA",         apiId:"bali", desc:"Balinese cats are like Siamese cats but with longer, silky coats. They are just as chatty and social, and love being involved in everything!",                                        traits:["Long coat","Very chatty","Blue eyes","Social"] },
+  { name:"Ocicat",               origin:"USA",         apiId:"ocic", desc:"Ocicats look wild with their stunning spots, but they are fully domestic! Named after the ocelot, they are very active and social cats.",                                             traits:["Spotted","Wild look","Social","Athletic"] },
+  { name:"Himalayan",            origin:"USA/UK",      apiId:"hima", desc:"Himalayans look like Persians but with Siamese colouring — beautiful blue eyes and colourpoint markings. They are gentle and love being indoors.",                                    traits:["Blue eyes","Fluffy","Gentle","Colourpoint coat"] },
 ];
 
 const grid = document.getElementById('grid');
 const overlay = document.getElementById('overlay');
-let breedData = [];
+let breedData = [...breeds.map(b => ({...b, imgUrl: ''}))];
+
+async function fetchImageForBreed(apiId) {
+  const res = await fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${apiId}&limit=1`);
+  const data = await res.json();
+  if (data && data[0] && data[0].url) return data[0].url;
+  return null;
+}
 
 async function loadBreeds() {
   try {
-    const res = await fetch('https://api.thecatapi.com/v1/breeds');
-    const apiBreeds = await res.json();
-    const apiMap = {};
-    apiBreeds.forEach(b => { apiMap[b.id] = b; });
+    document.getElementById('loading').textContent = '🐱 Loading cats... please wait!';
 
-    breedData = breeds.map(b => {
-      const api = apiMap[b.apiId] || {};
-      const imgUrl = api.reference_image_id
-        ? `https://cdn2.thecatapi.com/images/${api.reference_image_id}.jpg`
-        : `https://api.thecatapi.com/v1/images/search?breed_ids=${b.apiId}&limit=1`;
-      return { ...b, imgUrl, imageId: api.reference_image_id };
-    });
+    const promises = breeds.map((b, i) =>
+      fetchImageForBreed(b.apiId).then(url => {
+        breedData[i].imgUrl = url || 'https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg';
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.index = i;
+        card.innerHTML = `<img src="${breedData[i].imgUrl}" alt="${b.name}" loading="lazy"><div class="card-label">${b.name}</div><div class="card-origin">📍 ${b.origin}</div>`;
+        card.onclick = () => openPopup(i);
+        grid.appendChild(card);
+      }).catch(() => {
+        breedData[i].imgUrl = 'https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg';
+      })
+    );
 
+    await Promise.all(promises);
     document.getElementById('loading').style.display = 'none';
-
-    breedData.forEach((b, i) => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `<img src="${b.imgUrl}" alt="${b.name}" loading="lazy" onerror="this.src='https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg'"><div class="card-label">${b.name}</div><div class="card-origin">📍 ${b.origin}</div>`;
-      card.onclick = () => openPopup(i);
-      grid.appendChild(card);
-    });
 
   } catch(e) {
     document.getElementById('loading').textContent = '😿 Could not load cats. Please check your internet connection!';
@@ -266,8 +259,7 @@ function openPopup(i) {
   document.getElementById('pop-name').textContent = b.name;
   document.getElementById('pop-origin').textContent = '📍 ' + b.origin;
   document.getElementById('pop-desc').textContent = b.desc;
-  const traits = document.getElementById('pop-traits');
-  traits.innerHTML = b.traits.map(t => `<span class="trait">${t}</span>`).join('');
+  document.getElementById('pop-traits').innerHTML = b.traits.map(t => `<span class="trait">${t}</span>`).join('');
   overlay.classList.add('active');
 }
 
